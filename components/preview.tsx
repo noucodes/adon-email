@@ -1,3 +1,4 @@
+"use client";
 import { Label } from "@/components/ui/label";
 import { Mail, Calendar, Copy, Globe, Inbox } from "lucide-react";
 import React from "react";
@@ -10,38 +11,56 @@ import {
 } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
-import { toast } from "sonner";
 import {
   generateGmailSignature,
   generateOutlookSignature,
   generateMondaySignature,
 } from "@/utils/signatureGenerator";
 import { SignatureData, DesignType } from "@/types/signature";
+import { designOptions } from "@/app/data/designOptions";
+import { toast } from "sonner";
 
 type Props = {
-  designData: DesignType;
-  selectedDesignOption: SignatureData;
+  designData: SignatureData;
+  selectedDesign: DesignType;
 };
 
-const SignaturePreview: React.FC<Props> = ({
-  selectedDesignOption,
-  designData,
-}) => {
-  const copyToClipboard = async (content: string, platform: string) => {
+const SignaturePreview: React.FC<Props> = ({ selectedDesign, designData }) => {
+  const copyRenderedSignature = (elementId: string, platform: string) => {
+    const el = document.getElementById(elementId);
+    if (!el) return;
+
+    const range = document.createRange();
+    range.selectNodeContents(el);
+
+    const selection = window.getSelection();
+    selection?.removeAllRanges();
+    selection?.addRange(range);
+
     try {
-      await navigator.clipboard.writeText(content);
-      toast("Copied!", {
-        description: `${platform} signature HTML copied to clipboard`,
-      });
+      const successful = document.execCommand("copy");
+      if (successful) {
+        toast.success("Copied!", {
+          description: `${platform} signature copied to clipboard`,
+        });
+      } else {
+        throw new Error("Copy command was unsuccessful");
+      }
     } catch (err) {
-      toast.warning("Error", {
-        description: "Failed to copy to clipboard",
+      toast.error("Error", {
+        description: "Failed to copy rich HTML content",
       });
     }
+
+    selection?.removeAllRanges(); // Cleanup
   };
+
+  const selectedDesignOption = designOptions.find(
+    (d) => d.value === selectedDesign
+  );
+
   return (
-    <Card className="backdrop-blur-md bg-white/70 border-white/20 shadow-xl">
-      {/* Preview Section with Glass Effect */}
+    <Card className="backdrop-blur-md bg-white/70 border-white/20 shadow-xl ">
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <Globe className="h-5 w-5 text-green-600" />
@@ -75,30 +94,25 @@ const SignaturePreview: React.FC<Props> = ({
             </TabsTrigger>
           </TabsList>
 
-          <TabsContent value="gmail" className="space-y-4">
+          {/* === Gmail Tab === */}
+          <TabsContent value="gmail" className="space-y-4 mt-4">
             <div className="flex items-center justify-between">
               <h3 className="font-semibold">Gmail Version</h3>
               <Button
                 onClick={() =>
-                  copyToClipboard(
-                    generateGmailSignature(selectedDesignOption, designData),
-                    "Gmail"
-                  )
+                  copyRenderedSignature("gmail-copy-source", "Gmail")
                 }
                 size="sm"
-                className="gap-2"
+                className="gap-2 bg-black text-white"
               >
                 <Copy className="h-4 w-4" />
-                Copy HTML
+                Copy Signature
               </Button>
             </div>
             <div className="border rounded-lg p-4 bg-white/80 backdrop-blur-sm max-h-96 overflow-y-auto">
               <div
                 dangerouslySetInnerHTML={{
-                  __html: generateGmailSignature(
-                    selectedDesignOption,
-                    designData
-                  ),
+                  __html: generateGmailSignature(designData, selectedDesign),
                 }}
               />
             </div>
@@ -106,38 +120,41 @@ const SignaturePreview: React.FC<Props> = ({
               <Label className="text-sm font-medium text-gray-700">
                 HTML Code:
               </Label>
-              <pre className="mt-2 text-xs bg-gray-100/80 p-2 rounded overflow-x-auto max-h-32">
+              <pre className="mt-2 text-xs bg-gray-100/80 p-2 rounded overflow-x-auto max-h-64">
                 <code>
-                  {generateGmailSignature(selectedDesignOption, designData)}
+                  {generateGmailSignature(designData, selectedDesign)}
                 </code>
               </pre>
             </div>
+            {/* Hidden render container for copy */}
+            <div
+              id="gmail-copy-source"
+              style={{ position: "absolute", left: "-9999px" }}
+              dangerouslySetInnerHTML={{
+                __html: generateGmailSignature(designData, selectedDesign),
+              }}
+            />
           </TabsContent>
 
-          <TabsContent value="outlook" className="space-y-4">
+          {/* === Outlook Tab === */}
+          <TabsContent value="outlook" className="space-y-4 mt-4">
             <div className="flex items-center justify-between">
               <h3 className="font-semibold">Outlook Version</h3>
               <Button
                 onClick={() =>
-                  copyToClipboard(
-                    generateOutlookSignature(selectedDesignOption, designData),
-                    "Outlook"
-                  )
+                  copyRenderedSignature("outlook-copy-source", "Outlook")
                 }
                 size="sm"
-                className="gap-2"
+                className="gap-2 bg-black text-white"
               >
                 <Copy className="h-4 w-4" />
-                Copy HTML
+                Copy Signature
               </Button>
             </div>
             <div className="border rounded-lg p-4 bg-white/80 backdrop-blur-sm max-h-96 overflow-y-auto">
               <div
                 dangerouslySetInnerHTML={{
-                  __html: generateOutlookSignature(
-                    selectedDesignOption,
-                    designData
-                  ),
+                  __html: generateOutlookSignature(designData, selectedDesign),
                 }}
               />
             </div>
@@ -145,38 +162,40 @@ const SignaturePreview: React.FC<Props> = ({
               <Label className="text-sm font-medium text-gray-700">
                 HTML Code:
               </Label>
-              <pre className="mt-2 text-xs bg-gray-100/80 p-2 rounded overflow-x-auto max-h-32">
+              <pre className="mt-2 text-xs bg-gray-100/80 p-2 rounded overflow-x-auto max-h-64">
                 <code>
-                  {generateOutlookSignature(selectedDesignOption, designData)}
+                  {generateOutlookSignature(designData, selectedDesign)}
                 </code>
               </pre>
             </div>
+            <div
+              id="outlook-copy-source"
+              style={{ position: "absolute", left: "-9999px" }}
+              dangerouslySetInnerHTML={{
+                __html: generateOutlookSignature(designData, selectedDesign),
+              }}
+            />
           </TabsContent>
 
-          <TabsContent value="monday" className="space-y-4">
+          {/* === Monday Tab === */}
+          <TabsContent value="monday" className="space-y-4 mt-4">
             <div className="flex items-center justify-between">
               <h3 className="font-semibold">Monday.com Version</h3>
               <Button
                 onClick={() =>
-                  copyToClipboard(
-                    generateMondaySignature(selectedDesignOption, designData),
-                    "Monday.com"
-                  )
+                  copyRenderedSignature("monday-copy-source", "Monday.com")
                 }
                 size="sm"
-                className="gap-2"
+                className="gap-2 bg-black text-white"
               >
-                <Copy className="h-4 w-4" />
-                Copy HTML
+                <Copy className="h-4 w-4 " />
+                Copy Signature
               </Button>
             </div>
             <div className="border rounded-lg p-4 bg-white/80 backdrop-blur-sm max-h-96 overflow-y-auto">
               <div
                 dangerouslySetInnerHTML={{
-                  __html: generateMondaySignature(
-                    selectedDesignOption,
-                    designData
-                  ),
+                  __html: generateMondaySignature(designData, selectedDesign),
                 }}
               />
             </div>
@@ -184,12 +203,19 @@ const SignaturePreview: React.FC<Props> = ({
               <Label className="text-sm font-medium text-gray-700">
                 HTML Code:
               </Label>
-              <pre className="mt-2 text-xs bg-gray-100/80 p-2 rounded overflow-x-auto max-h-32">
+              <pre className="mt-2 text-xs bg-gray-100/80 p-2 rounded overflow-x-auto max-h-64">
                 <code>
-                  {generateMondaySignature(selectedDesignOption, designData)}
+                  {generateMondaySignature(designData, selectedDesign)}
                 </code>
               </pre>
             </div>
+            <div
+              id="monday-copy-source"
+              style={{ position: "absolute", left: "-9999px" }}
+              dangerouslySetInnerHTML={{
+                __html: generateMondaySignature(designData, selectedDesign),
+              }}
+            />
           </TabsContent>
         </Tabs>
       </CardContent>

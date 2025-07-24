@@ -343,50 +343,93 @@ export const generateOutlookSignature = (
 ) => {
   const designs = {
     modern: `
-<table cellpadding="0" cellspacing="0" style="font-family: Arial, sans-serif; font-size: 14px; color: #333; max-width: 500px;">
-  <tr>
-    <td style="border-left: 4px solid #2563eb; padding-left: 12px;">
-      <table cellpadding="0" cellspacing="0">
-        <tr><td style="font-size: 16px; font-weight: bold; color: #1a1a1a; padding-bottom: 4px;">${
-          data.name
-        }</td></tr>
-        <tr><td style="font-size: 13px; color: #666; padding-bottom: 2px;">${
-          data.title
-        }</td></tr>
-        <tr><td style="font-size: 13px; font-weight: bold; color: #2563eb; padding-bottom: 12px;">${
-          data.company
-        }</td></tr>
-        <tr><td style="padding-bottom: 4px;"><span style="color: #666;">E:</span> <a href="mailto:${
-          data.email
-        }" style="color: #2563eb; text-decoration: none;">${
-      data.email
-    }</a></td></tr>
+    <table
+  class="sig-cont"
+  style="
+    background-color: #000;
+    color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    width: 650px;
+    background-image: url('adon_bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+  "
+>
+  <tbody>
+    <tr style="margin: 0; padding: 0; height: 135px">
+      <td class="aog-logo" style="width: 40%">
+        <img
+          src="https://adongroup.com.au/wp-content/uploads/2024/12/AdonGroup.png"
+          style="width: 80%"
+        />
+      </td>
+
+      <td style="width: 60%">
+        <div class="name-position-cont" style="font-size: 21px; line-height: 1">
+          <strong style="line-height: 1.5">${data.name}</strong><br />
+          <strong style="font-size: 12px; margin-top: 10px; margin-bottom: 0"
+            >${data.title}</strong
+          ><br /><br />
+        </div>
+        <div class="links-cont" style="line-height: 1">
         ${
           data.phone
-            ? `<tr><td style="padding-bottom: 4px;"><span style="color: #666;">T:</span> <a href="tel:${data.phone}" style="color: #2563eb; text-decoration: none;">${data.phone}</a></td></tr>`
+            ? `<a
+            href="tel:${data.phone}"
+            style="font-size: 14px; color: #fff; text-decoration: none; display: flex"
+          >
+            <img
+              src="https://adongroup.com.au/wp-content/uploads/2024/12/phone-call.png"
+              style="
+                width: 15px;
+                height: 15px;
+                margin-right: 10px;
+                object-fit: contain;
+              "
+            />
+            ${data.phone} </a
+          ><br />`
             : ""
         }
-        ${
-          data.website
-            ? `<tr><td style="padding-bottom: 8px;"><span style="color: #666;">W:</span> <a href="${data.website}" style="color: #2563eb; text-decoration: none;">${data.website}</a></td></tr>`
-            : ""
-        }
-        ${
-          data.linkedin || data.twitter
-            ? `<tr><td style="border-top: 1px solid #e5e7eb; padding-top: 8px;">${
-                data.linkedin
-                  ? `<a href="${data.linkedin}" style="color: #0077b5; text-decoration: none; margin-right: 12px; font-size: 12px;">LinkedIn</a>`
-                  : ""
-              }${
-                data.twitter
-                  ? `<a href="${data.twitter}" style="color: #1da1f2; text-decoration: none; font-size: 12px;">Twitter</a>`
-                  : ""
-              }</td></tr>`
-            : ""
-        }
-      </table>
-    </td>
-  </tr>
+
+          <a
+            href="https://adongroup.com.au/"
+            style="font-size: 14px; color: #fff; text-decoration: none; display: flex"
+          >
+            <img
+              src="https://adongroup.com.au/wp-content/uploads/2024/12/globe.png"
+              style="
+                width: 15px;
+                height: 15px;
+                margin-right: 10px;
+                object-fit: contain;
+              "
+            />
+            www.adongroup.com.au </a
+          ><br />
+          <a
+            href="https://adonworkforce.com.au/"
+            style="font-size: 14px; color: #fff; text-decoration: none; display: flex"
+          >
+            <img
+              src="https://adongroup.com.au/wp-content/uploads/2024/12/globe.png"
+              style="
+                width: 15px;
+                height: 15px;
+                margin-right: 10px;
+                object-fit: contain;
+              "
+            />
+            www.adonworkforce.com.au
+          </a>
+        </div>
+      </td>
+    </tr>
+    <tr style="margin: 0; padding: 0; height: 90px">
+      <td></td>
+    </tr>
+  </tbody>
 </table>`,
 
     classic: `
@@ -431,218 +474,6 @@ export const generateOutlookSignature = (
               }</td></tr>`
             : ""
         }
-      </table>
-    </td>
-  </tr>
-</table>`,
-
-    minimal: `
-<table cellpadding="0" cellspacing="0" style="font-family: Arial, sans-serif; font-size: 13px; color: #333; max-width: 400px;">
-  <tr>
-    <td>
-      <table cellpadding="0" cellspacing="0">
-        <tr><td style="font-size: 16px; font-weight: normal; color: #000; padding-bottom: 2px;">${
-          data.name
-        }</td></tr>
-        <tr><td style="font-size: 12px; color: #666; padding-bottom: 1px;">${
-          data.title
-        }</td></tr>
-        <tr><td style="font-size: 12px; color: #999; padding-bottom: 8px;">${
-          data.company
-        }</td></tr>
-        <tr><td style="font-size: 12px; color: #666;"><a href="mailto:${
-          data.email
-        }" style="color: #333; text-decoration: none;">${
-      data.email
-    }</a></td></tr>
-        ${
-          data.phone
-            ? `<tr><td style="font-size: 12px; color: #666;"><a href="tel:${data.phone}" style="color: #333; text-decoration: none;">${data.phone}</a></td></tr>`
-            : ""
-        }
-        ${
-          data.website
-            ? `<tr><td style="font-size: 12px; color: #666; padding-bottom: 8px;"><a href="${data.website}" style="color: #333; text-decoration: none;">${data.website}</a></td></tr>`
-            : ""
-        }
-        ${
-          data.linkedin || data.twitter
-            ? `<tr><td style="font-size: 11px; padding-top: 8px;">${
-                data.linkedin
-                  ? `<a href="${data.linkedin}" style="color: #666; text-decoration: none; margin-right: 12px;">LinkedIn</a>`
-                  : ""
-              }${
-                data.twitter
-                  ? `<a href="${data.twitter}" style="color: #666; text-decoration: none;">Twitter</a>`
-                  : ""
-              }</td></tr>`
-            : ""
-        }
-      </table>
-    </td>
-  </tr>
-</table>`,
-
-    creative: `
-<table cellpadding="0" cellspacing="0" style="font-family: Arial, sans-serif; font-size: 14px; color: white; max-width: 520px; background-color: #667eea; border-radius: 15px;">
-  <tr>
-    <td style="padding: 20px; text-align: center;">
-      <table cellpadding="0" cellspacing="0" width="100%">
-        <tr><td style="font-size: 20px; font-weight: bold; color: #fff; padding-bottom: 4px;">🌟 ${
-          data.name
-        } 🌟</td></tr>
-        <tr><td style="font-size: 16px; color: #f0f8ff; padding-bottom: 2px;">${
-          data.title
-        }</td></tr>
-        <tr><td style="font-size: 16px; font-weight: bold; color: #ffd700; padding-bottom: 16px;">✨ ${
-          data.company
-        } ✨</td></tr>
-        <tr><td style="background-color: rgba(255,255,255,0.2); padding: 12px; border-radius: 10px;">
-          <table cellpadding="0" cellspacing="0" width="100%">
-            <tr><td style="padding-bottom: 6px;">📧 <a href="mailto:${
-              data.email
-            }" style="color: #fff; text-decoration: none;">${
-      data.email
-    }</a></td></tr>
-            ${
-              data.phone
-                ? `<tr><td style="padding-bottom: 6px;">📞 <a href="tel:${data.phone}" style="color: #fff; text-decoration: none;">${data.phone}</a></td></tr>`
-                : ""
-            }
-            ${
-              data.website
-                ? `<tr><td>🌍 <a href="${data.website}" style="color: #fff; text-decoration: none;">${data.website}</a></td></tr>`
-                : ""
-            }
-          </table>
-        </td></tr>
-        ${
-          data.linkedin || data.twitter
-            ? `<tr><td style="padding-top: 12px;">${
-                data.linkedin
-                  ? `<a href="${data.linkedin}" style="display: inline-block; margin: 0 6px; padding: 8px 16px; background-color: #ff6b6b; color: white; text-decoration: none; border-radius: 20px; font-size: 12px;">🔗 LinkedIn</a>`
-                  : ""
-              }${
-                data.twitter
-                  ? `<a href="${data.twitter}" style="display: inline-block; margin: 0 6px; padding: 8px 16px; background-color: #4ecdc4; color: white; text-decoration: none; border-radius: 20px; font-size: 12px;">🐦 Twitter</a>`
-                  : ""
-              }</td></tr>`
-            : ""
-        }
-      </table>
-    </td>
-  </tr>
-</table>`,
-
-    corporate: `
-<table cellpadding="0" cellspacing="0" style="font-family: Arial, sans-serif; font-size: 13px; color: #2c3e50; max-width: 500px; border: 2px solid #34495e; background-color: #ecf0f1;">
-  <tr>
-    <td style="padding: 16px;">
-      <table cellpadding="0" cellspacing="0" width="100%">
-        <tr><td style="text-align: center; font-size: 18px; font-weight: bold; color: #2c3e50; padding-bottom: 4px; text-transform: uppercase; border-bottom: 2px solid #34495e; padding-bottom: 12px; margin-bottom: 16px;">${
-          data.name
-        }</td></tr>
-        <tr><td style="text-align: center; font-size: 13px; color: #7f8c8d; padding-bottom: 2px; text-transform: uppercase;">${
-          data.title
-        }</td></tr>
-        <tr><td style="text-align: center; font-size: 14px; font-weight: bold; color: #34495e; text-transform: uppercase; padding-bottom: 16px;">${
-          data.company
-        }</td></tr>
-        <tr><td style="padding: 4px 0;"><span style="font-weight: bold; color: #34495e;">EMAIL:</span> <a href="mailto:${
-          data.email
-        }" style="color: #2980b9; text-decoration: none;">${
-      data.email
-    }</a></td></tr>
-        ${
-          data.phone
-            ? `<tr><td style="padding: 4px 0;"><span style="font-weight: bold; color: #34495e;">PHONE:</span> <a href="tel:${data.phone}" style="color: #2980b9; text-decoration: none;">${data.phone}</a></td></tr>`
-            : ""
-        }
-        ${
-          data.website
-            ? `<tr><td style="padding: 4px 0;"><span style="font-weight: bold; color: #34495e;">WEB:</span> <a href="${data.website}" style="color: #2980b9; text-decoration: none;">${data.website}</a></td></tr>`
-            : ""
-        }
-        ${
-          data.linkedin || data.twitter
-            ? `<tr><td style="border-top: 1px solid #bdc3c7; padding-top: 8px; text-align: center;">${
-                data.linkedin
-                  ? `<a href="${data.linkedin}" style="display: inline-block; margin: 0 4px; padding: 4px 8px; background-color: #34495e; color: white; text-decoration: none; font-size: 11px; text-transform: uppercase;">LINKEDIN</a>`
-                  : ""
-              }${
-                data.twitter
-                  ? `<a href="${data.twitter}" style="display: inline-block; margin: 0 4px; padding: 4px 8px; background-color: #34495e; color: white; text-decoration: none; font-size: 11px; text-transform: uppercase;">TWITTER</a>`
-                  : ""
-              }</td></tr>`
-            : ""
-        }
-      </table>
-    </td>
-  </tr>
-</table>`,
-
-    card: `
-<table cellpadding="0" cellspacing="0" style="font-family: Arial, sans-serif; font-size: 14px; color: #333; max-width: 450px; background-color: #f8f9fa; border: 1px solid #dee2e6;">
-  <tr>
-    <td style="background-color: #6c757d; width: 4px;"></td>
-    <td style="padding: 20px;">
-      <table cellpadding="0" cellspacing="0" width="100%">
-        <tr>
-          <td style="vertical-align: top;">
-            <table cellpadding="0" cellspacing="0">
-              <tr><td style="font-size: 18px; font-weight: bold; color: #212529; padding-bottom: 4px;">${
-                data.name
-              }</td></tr>
-              <tr><td style="font-size: 13px; color: #6c757d; padding-bottom: 2px;">${
-                data.title
-              }</td></tr>
-              <tr><td style="font-size: 13px; font-weight: bold; color: #495057; padding-bottom: 16px;">${
-                data.company
-              }</td></tr>
-            </table>
-          </td>
-          <td style="text-align: right; vertical-align: top;">
-            <div style="width: 60px; height: 60px; background-color: #e9ecef; border-radius: 50%; display: inline-block; text-align: center; line-height: 60px; font-size: 24px; color: #6c757d;">
-              ${data.name
-                .split(" ")
-                .map((n) => n[0])
-                .join("")
-                .toUpperCase()}
-            </div>
-          </td>
-        </tr>
-        <tr><td colspan="2" style="border-top: 1px solid #dee2e6; padding-top: 12px;">
-          <table cellpadding="0" cellspacing="0">
-            <tr><td style="padding-bottom: 6px;"><a href="mailto:${
-              data.email
-            }" style="color: #0d6efd; text-decoration: none; font-size: 13px;">${
-      data.email
-    }</a></td></tr>
-            ${
-              data.phone
-                ? `<tr><td style="padding-bottom: 6px;"><a href="tel:${data.phone}" style="color: #0d6efd; text-decoration: none; font-size: 13px;">${data.phone}</a></td></tr>`
-                : ""
-            }
-            ${
-              data.website
-                ? `<tr><td style="padding-bottom: 6px;"><a href="${data.website}" style="color: #0d6efd; text-decoration: none; font-size: 13px;">${data.website}</a></td></tr>`
-                : ""
-            }
-            ${
-              data.linkedin || data.twitter
-                ? `<tr><td style="padding-top: 12px;">${
-                    data.linkedin
-                      ? `<a href="${data.linkedin}" style="display: inline-block; margin-right: 8px; padding: 4px 8px; background-color: #0d6efd; color: white; text-decoration: none; font-size: 11px;">LinkedIn</a>`
-                      : ""
-                  }${
-                    data.twitter
-                      ? `<a href="${data.twitter}" style="display: inline-block; padding: 4px 8px; background-color: #198754; color: white; text-decoration: none; font-size: 11px;">Twitter</a>`
-                      : ""
-                  }</td></tr>`
-                : ""
-            }
-          </table>
-        </td></tr>
       </table>
     </td>
   </tr>
@@ -704,10 +535,6 @@ export const generateMondaySignature = (
 </div>`,
 
     classic: generateGmailSignature(data, "classic"),
-    minimal: generateGmailSignature(data, "minimal"),
-    creative: generateGmailSignature(data, "creative"),
-    corporate: generateGmailSignature(data, "corporate"),
-    card: generateGmailSignature(data, "card"),
   };
 
   return designs[design].trim();

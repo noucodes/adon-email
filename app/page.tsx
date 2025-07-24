@@ -33,6 +33,8 @@ import {
   CreditCard,
   Layout,
 } from "lucide-react";
+import Image from "next/image";
+import { Toaster } from "@/components/ui/sonner";
 
 import Instruction from "@/components/instructions";
 import { SignatureData, DesignType } from "@/types/signature";
@@ -66,24 +68,32 @@ export default function EmailSignatureMaker() {
   return (
     <div className="min-h-screen relative overflow-hidden">
       {/* Enhanced Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:20px_20px]"></div>
-        <div className="absolute top-0 -left-4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-        <div className="absolute top-0 -right-4 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-zinc-200 to-neutral-50">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+        <div className="absolute top-0 -left-4 w-72 h-72 bg-cyan-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+        <div className="absolute top-0 -right-4 w-72 h-72 bg-slate-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-8 left-20 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
       </div>
 
       <div className="relative z-10 container mx-auto p-6">
+        <Toaster
+          position="top-right"
+          toastOptions={{
+            style: {
+              background: "white",
+            },
+          }}
+        />
         <div className="text-center mb-8">
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
-            Adonph Email Signature
+          <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-blue-950 bg-clip-text text-transparent mb-4">
+            ADONPH
           </h1>
           <p className="text-gray-600 text-lg">
             Create professional email signatures with multiple design options
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-[2fr_3fr] gap-8 max-w-7xl mx-auto">
           <Card className="backdrop-blur-md bg-white/70 border-white/20 shadow-xl">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -96,7 +106,7 @@ export default function EmailSignatureMaker() {
             </CardHeader>
             <CardContent className="space-y-6">
               {/* Design Selector */}
-              <div className="space-y-3">
+              <div className="space-y-3 hidden">
                 <Label className="text-base font-semibold flex items-center gap-2">
                   <Palette className="h-4 w-4" />
                   Choose Design Template
@@ -107,7 +117,7 @@ export default function EmailSignatureMaker() {
                     setSelectedDesign(value)
                   }
                 >
-                  <SelectTrigger className="backdrop-blur-sm bg-white/50 border-gray-200 hover:border-gray-300">
+                  <SelectTrigger className="backdrop-blur-sm bg-white/50 border-gray-200 hover:border-gray-300 focus:outline-hidden">
                     <SelectValue>
                       <div className="flex items-center gap-2">
                         {selectedDesignOption && (
@@ -120,9 +130,9 @@ export default function EmailSignatureMaker() {
                       </div>
                     </SelectValue>
                   </SelectTrigger>
-                  <SelectContent className="bg-white">
+                  <SelectContent className="bg-white  border-gray-200 hover:border-gray-300 focus:outline-hidden">
                     {designOptions.map((design) => (
-                      <SelectItem key={design.value} value="light">
+                      <SelectItem key={design.value} value={design.value}>
                         <div className="flex items-center gap-2">
                           <design.icon className="h-4 w-4" />
                           <div>
@@ -251,13 +261,13 @@ export default function EmailSignatureMaker() {
           </Card>
           {/* Preview Section with Glass Effect */}
           <SignaturePreview
-            selectedDesignOption="selectedDesign"
-            designData="signatureData"
+            selectedDesign={selectedDesign}
+            designData={signatureData}
           />
         </div>
 
         {/* Design Showcase */}
-        <div className="mt-8">
+        <div className="mt-8 hidden">
           <Card className="max-w-6xl mx-auto backdrop-blur-md bg-white/70 border-white/20 shadow-xl">
             <CardHeader>
               <CardTitle className="text-center text-2xl">

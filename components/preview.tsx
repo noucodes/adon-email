@@ -12,7 +12,6 @@ import {
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import {
-  generateGmailSignature,
   generateOutlookSignature,
   generateMondaySignature,
 } from "@/utils/signatureGenerator";
@@ -78,63 +77,17 @@ const SignaturePreview: React.FC<Props> = ({ selectedDesign, designData }) => {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <Tabs defaultValue="gmail" className="w-full">
-          <TabsList className="grid w-full grid-cols-3 backdrop-blur-sm bg-white/50">
-            <TabsTrigger value="gmail" className="flex items-center gap-2">
-              <Mail className="h-4 w-4" />
-              Gmail
-            </TabsTrigger>
+        <Tabs defaultValue="outlook" className="w-full">
+          <TabsList className="grid w-full grid-cols-2 backdrop-blur-sm bg-white/50">
             <TabsTrigger value="outlook" className="flex items-center gap-2">
               <Inbox className="h-4 w-4" />
-              Outlook
+              Gmail/Outlook
             </TabsTrigger>
             <TabsTrigger value="monday" className="flex items-center gap-2">
               <Calendar className="h-4 w-4" />
               Monday
             </TabsTrigger>
           </TabsList>
-
-          {/* === Gmail Tab === */}
-          <TabsContent value="gmail" className="space-y-4 mt-4">
-            <div className="flex items-center justify-between">
-              <h3 className="font-semibold">Gmail Version</h3>
-              <Button
-                onClick={() =>
-                  copyRenderedSignature("gmail-copy-source", "Gmail")
-                }
-                size="sm"
-                className="gap-2 bg-black text-white"
-              >
-                <Copy className="h-4 w-4" />
-                Copy Signature
-              </Button>
-            </div>
-            <div className="border rounded-lg p-4 bg-white/80 backdrop-blur-sm max-h-96 overflow-y-auto">
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: generateGmailSignature(designData, selectedDesign),
-                }}
-              />
-            </div>
-            <div className="p-3 bg-gray-50/80 backdrop-blur-sm rounded-lg">
-              <Label className="text-sm font-medium text-gray-700">
-                HTML Code:
-              </Label>
-              <pre className="mt-2 text-xs bg-gray-100/80 p-2 rounded overflow-x-auto max-h-64">
-                <code>
-                  {generateGmailSignature(designData, selectedDesign)}
-                </code>
-              </pre>
-            </div>
-            {/* Hidden render container for copy */}
-            <div
-              id="gmail-copy-source"
-              style={{ position: "absolute", left: "-9999px" }}
-              dangerouslySetInnerHTML={{
-                __html: generateGmailSignature(designData, selectedDesign),
-              }}
-            />
-          </TabsContent>
 
           {/* === Outlook Tab === */}
           <TabsContent value="outlook" className="space-y-4 mt-4">
@@ -158,7 +111,7 @@ const SignaturePreview: React.FC<Props> = ({ selectedDesign, designData }) => {
                 }}
               />
             </div>
-            <div className="p-3 bg-gray-50/80 backdrop-blur-sm rounded-lg">
+            {/* <div className="p-3 bg-gray-50/80 backdrop-blur-sm rounded-lg">
               <Label className="text-sm font-medium text-gray-700">
                 HTML Code:
               </Label>
@@ -174,7 +127,7 @@ const SignaturePreview: React.FC<Props> = ({ selectedDesign, designData }) => {
               dangerouslySetInnerHTML={{
                 __html: generateOutlookSignature(designData, selectedDesign),
               }}
-            />
+            /> */}
           </TabsContent>
 
           {/* === Monday Tab === */}
@@ -199,7 +152,7 @@ const SignaturePreview: React.FC<Props> = ({ selectedDesign, designData }) => {
                 }}
               />
             </div>
-            <div className="p-3 bg-gray-50/80 backdrop-blur-sm rounded-lg">
+            {/* <div className="p-3 bg-gray-50/80 backdrop-blur-sm rounded-lg">
               <Label className="text-sm font-medium text-gray-700">
                 HTML Code:
               </Label>
@@ -215,7 +168,7 @@ const SignaturePreview: React.FC<Props> = ({ selectedDesign, designData }) => {
               dangerouslySetInnerHTML={{
                 __html: generateMondaySignature(designData, selectedDesign),
               }}
-            />
+            /> */}
           </TabsContent>
         </Tabs>
       </CardContent>

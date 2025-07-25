@@ -46,12 +46,11 @@ export default function EmailSignatureMaker() {
   const [signatureData, setSignatureData] = useState<SignatureData>({
     name: "John Doe",
     title: "Senior Developer",
-    company: "Adonph",
-    email: "john.doe@adonph.com",
     phone: "+1 (555) 123-4567",
-    website: "https://adonph.com",
     linkedin: "https://linkedin.com/in/johndoe",
     twitter: "https://twitter.com/johndoe",
+    website1: "www.adongroup.com.au",
+    website2: "www.adonworkforce.com.au",
   });
 
   const handleInputChange = (field: keyof SignatureData, value: string) => {
@@ -106,7 +105,7 @@ export default function EmailSignatureMaker() {
             </CardHeader>
             <CardContent className="space-y-6">
               {/* Design Selector */}
-              <div className="space-y-3 hidden">
+              <div className="space-y-3">
                 <Label className="text-base font-semibold flex items-center gap-2">
                   <Palette className="h-4 w-4" />
                   Choose Design Template
@@ -174,29 +173,6 @@ export default function EmailSignatureMaker() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="company">Company *</Label>
-                <Input
-                  id="company"
-                  value={signatureData.company}
-                  onChange={(e) => handleInputChange("company", e.target.value)}
-                  placeholder="Adonph"
-                  className="backdrop-blur-sm bg-white/50 border-gray-200 hover:border-gray-300"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="email">Email Address *</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  value={signatureData.email}
-                  onChange={(e) => handleInputChange("email", e.target.value)}
-                  placeholder="john.doe@adonph.com"
-                  className="backdrop-blur-sm bg-white/50 border-gray-200 hover:border-gray-300"
-                />
-              </div>
-
-              <div className="space-y-2">
                 <Label htmlFor="phone">Phone Number</Label>
                 <Input
                   id="phone"
@@ -208,54 +184,28 @@ export default function EmailSignatureMaker() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="website">Website</Label>
+                <Label htmlFor="website1">Website 1</Label>
                 <Input
-                  id="website"
-                  value={signatureData.website}
-                  onChange={(e) => handleInputChange("website", e.target.value)}
+                  id="website1"
+                  value={signatureData.website1}
+                  onChange={(e) =>
+                    handleInputChange("website1", e.target.value)
+                  }
                   placeholder="https://adonph.com"
                   className="backdrop-blur-sm bg-white/50 border-gray-200 hover:border-gray-300"
                 />
               </div>
-
-              <Separator className="bg-white/30" />
-
-              <div className="space-y-4">
-                <h3 className="font-semibold text-gray-900">
-                  Social Links (Optional)
-                </h3>
-
-                <div className="space-y-2">
-                  <Label htmlFor="linkedin" className="flex items-center gap-2">
-                    <Linkedin className="h-4 w-4 text-blue-600" />
-                    LinkedIn Profile
-                  </Label>
-                  <Input
-                    id="linkedin"
-                    value={signatureData.linkedin}
-                    onChange={(e) =>
-                      handleInputChange("linkedin", e.target.value)
-                    }
-                    placeholder="https://linkedin.com/in/johndoe"
-                    className="backdrop-blur-sm bg-white/50 border-gray-200 hover:border-gray-300"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="twitter" className="flex items-center gap-2">
-                    <Twitter className="h-4 w-4 text-blue-400" />
-                    Twitter Profile
-                  </Label>
-                  <Input
-                    id="twitter"
-                    value={signatureData.twitter}
-                    onChange={(e) =>
-                      handleInputChange("twitter", e.target.value)
-                    }
-                    placeholder="https://twitter.com/johndoe"
-                    className="backdrop-blur-sm bg-white/50 border-gray-200 hover:border-gray-300"
-                  />
-                </div>
+              <div className="space-y-2">
+                <Label htmlFor="website2">Website 2</Label>
+                <Input
+                  id="website2"
+                  value={signatureData.website2}
+                  onChange={(e) =>
+                    handleInputChange("website2", e.target.value)
+                  }
+                  placeholder="https://adonph.com"
+                  className="backdrop-blur-sm bg-white/50 border-gray-200 hover:border-gray-300"
+                />
               </div>
             </CardContent>
           </Card>

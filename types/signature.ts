@@ -6,7 +6,6 @@ export interface SignatureData {
   name: string;
   title: string;
   phone?: string;
-  website?: string;
   website1?: string;
   website2?: string;
   linkedin?: string;

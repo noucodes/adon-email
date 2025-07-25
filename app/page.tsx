@@ -18,22 +18,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import {
-  Copy,
-  Mail,
-  Globe,
-  Linkedin,
-  Twitter,
-  Calendar,
-  Inbox,
-  Palette,
-  User,
-  Sparkles,
-  Building,
-  CreditCard,
-  Layout,
-} from "lucide-react";
-import Image from "next/image";
+import { Mail, Palette } from "lucide-react";
 import { Toaster } from "@/components/ui/sonner";
 
 import Instruction from "@/components/instructions";

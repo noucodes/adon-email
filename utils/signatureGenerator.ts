@@ -14,33 +14,34 @@ export const generateOutlookSignature = (
     border-radius: 15px;
     padding: 20px;
     width: 650px;
-    background-image: url('adon_bg.png');
+    background-image: url('https://raw.githubusercontent.com/noucodes/adon-email/refs/heads/main/public/adon-bg.png');
     background-repeat: no-repeat;
     background-position: center;
+    font-family: Arial, sans-serif;
   "
 >
   <tbody style="margin: 20px;">
-    <tr style="margin: 0; padding: 0; height: 135px">
-      <td class="aog-logo" style="width: 40%">
+    <tr style="margin: 0; padding: 0; height: 140px">
+      <td class="aog-logo" style="width: 35%; padding: 10px 0 0 20px;">
         <img
           src="https://adongroup.com.au/wp-content/uploads/2024/12/AdonGroup.png"
-          style="width: 80%"
+          style="width: 90%"
         />
       </td>
 
-      <td style="width: 60%">
-        <div class="name-position-cont" style="font-size: 21px; line-height: 1">
+      <td style="width: 65%; padding: 10px 0 0 0;">
+        <div class="name-position-cont" style="font-size: 21px; line-height: .5">
           <strong style="line-height: 1.5">${data.name}</strong><br />
-          <strong style="font-size: 12px; margin-top: 10px; margin-bottom: 0"
+          <strong style="font-size: 12px;"
             >${data.title}</strong
-          ><br /><br />
+          ><br /><br /><br />
         </div>
-        <div class="links-cont" style="line-height: 1">
+        <div class="links-cont" style="line-height: .6">
         ${
           data.phone
             ? `<a
             href="tel:${data.phone}"
-            style="font-size: 14px; color: #fff; text-decoration: none; display: flex"
+            style="font-size: 14px; color: #fff; text-decoration: none; display: flex; align-items: center;"
           >
             <img
               src="https://adongroup.com.au/wp-content/uploads/2024/12/phone-call.png"
@@ -60,7 +61,7 @@ export const generateOutlookSignature = (
           data.website1
             ? `<a
             href="https://adongroup.com.au/"
-            style="font-size: 14px; color: #fff; text-decoration: none; display: flex"
+            style="font-size: 14px; color: #fff; text-decoration: none; display: flex; align-items: center;"
           >
             <img
               src="https://adongroup.com.au/wp-content/uploads/2024/12/globe.png"
@@ -79,7 +80,7 @@ export const generateOutlookSignature = (
             data.website2
               ? `<a
             href="https://adonworkforce.com.au/"
-            style="font-size: 14px; color: #fff; text-decoration: none; display: flex"
+            style="font-size: 14px; color: #fff; text-decoration: none; display: flex; align-items: center;"
           >
             <img
               src="https://adongroup.com.au/wp-content/uploads/2024/12/globe.png"
@@ -97,7 +98,7 @@ export const generateOutlookSignature = (
         </div>
       </td>
     </tr>
-    <tr style="margin: 0; padding: 0; height: 90px">
+    <tr style="margin: 0; padding: 0; height: 100px">
       <td></td>
     </tr>
   </tbody>

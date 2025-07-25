@@ -18,7 +18,7 @@ const Instruction = () => {
               </div>
               <ul className="text-sm text-gray-600 space-y-1">
                 <li>• Go to Gmail Settings → General</li>
-                <li>• Scroll to "Signature" section</li>
+                <li>• Scroll to &quot;Signature&quot; section</li>
                 <li>• Paste HTML in rich text mode</li>
                 <li>• Save changes</li>
               </ul>
@@ -30,7 +30,7 @@ const Instruction = () => {
               </div>
               <ul className="text-sm text-gray-600 space-y-1">
                 <li>• File → Options → Mail</li>
-                <li>• Click "Signatures..."</li>
+                <li>• Click &quot;Signatures...&quot;</li>
                 <li>• New → Paste HTML code</li>
                 <li>• Set as default signature</li>
               </ul>

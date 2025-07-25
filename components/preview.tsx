@@ -1,6 +1,5 @@
 "use client";
-import { Label } from "@/components/ui/label";
-import { Mail, Calendar, Copy, Globe, Inbox } from "lucide-react";
+import { Calendar, Copy, Globe, Inbox } from "lucide-react";
 import React from "react";
 import {
   Card,
@@ -26,6 +25,7 @@ type Props = {
 
 const SignaturePreview: React.FC<Props> = ({ selectedDesign, designData }) => {
   const copyRenderedSignature = (elementId: string, platform: string) => {
+    console.log("clicked");
     const el = document.getElementById(elementId);
     if (!el) return;
 
@@ -49,6 +49,7 @@ const SignaturePreview: React.FC<Props> = ({ selectedDesign, designData }) => {
       toast.error("Error", {
         description: "Failed to copy rich HTML content",
       });
+      console.log("error:", err);
     }
 
     selection?.removeAllRanges(); // Cleanup
@@ -120,14 +121,14 @@ const SignaturePreview: React.FC<Props> = ({ selectedDesign, designData }) => {
                   {generateOutlookSignature(designData, selectedDesign)}
                 </code>
               </pre>
-            </div>
+            </div> */}
             <div
               id="outlook-copy-source"
               style={{ position: "absolute", left: "-9999px" }}
               dangerouslySetInnerHTML={{
                 __html: generateOutlookSignature(designData, selectedDesign),
               }}
-            /> */}
+            />
           </TabsContent>
 
           {/* === Monday Tab === */}
@@ -161,14 +162,14 @@ const SignaturePreview: React.FC<Props> = ({ selectedDesign, designData }) => {
                   {generateMondaySignature(designData, selectedDesign)}
                 </code>
               </pre>
-            </div>
+            </div> */}
             <div
               id="monday-copy-source"
               style={{ position: "absolute", left: "-9999px" }}
               dangerouslySetInnerHTML={{
                 __html: generateMondaySignature(designData, selectedDesign),
               }}
-            /> */}
+            />
           </TabsContent>
         </Tabs>
       </CardContent>

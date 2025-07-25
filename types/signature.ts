@@ -1,5 +1,5 @@
 // Defines allowed design keys
-export type DesignType = "modern" | "classic";
+export type DesignType = "design1" | "design2";
 
 // Data entered by the user in the form
 export interface SignatureData {

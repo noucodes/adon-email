@@ -6,7 +6,7 @@ const Instruction = () => {
   return (
     <div className="mt-8 text-center">
       <Card className="max-w-4xl mx-auto backdrop-blur-md bg-white/70 border-white/20 shadow-xl">
-        <CardContent className="pt-6">
+        <CardContent>
           <h3 className="font-semibold mb-4 text-xl">
             Platform-Specific Instructions
           </h3>
@@ -19,7 +19,7 @@ const Instruction = () => {
               <ul className="text-sm text-gray-600 space-y-1">
                 <li>• Go to Gmail Settings → General</li>
                 <li>• Scroll to &quot;Signature&quot; section</li>
-                <li>• Paste HTML in rich text mode</li>
+                <li>• Paste the copied signature</li>
                 <li>• Save changes</li>
               </ul>
             </div>

@@ -5,7 +5,7 @@ export const generateOutlookSignature = (
   design: DesignType
 ) => {
   const designs = {
-    modern: `
+    design1: `
     <table
   class="sig-cont"
   style="
@@ -41,13 +41,13 @@ export const generateOutlookSignature = (
           data.phone
             ? `<a
             href="tel:${data.phone}"
-            style="font-size: 14px; color: #fff; text-decoration: none; display: flex; align-items: center;"
+            style="font-size: 12px; color: #fff; text-decoration: none; display: flex; align-items: center;"
           >
             <img
               src="https://adongroup.com.au/wp-content/uploads/2024/12/phone-call.png"
               style="
-                width: 15px;
-                height: 15px;
+                width: 14px;
+                height: 14px;
                 margin-right: 10px;
                 object-fit: contain;
               "
@@ -61,13 +61,13 @@ export const generateOutlookSignature = (
           data.website1
             ? `<a
             href="https://adongroup.com.au/"
-            style="font-size: 14px; color: #fff; text-decoration: none; display: flex; align-items: center;"
+            style="font-size: 12px; color: #fff; text-decoration: none; display: flex; align-items: center;"
           >
             <img
               src="https://adongroup.com.au/wp-content/uploads/2024/12/globe.png"
               style="
-                width: 15px;
-                height: 15px;
+                width: 14px;
+                height: 14px;
                 margin-right: 10px;
                 object-fit: contain;
               "
@@ -80,13 +80,13 @@ export const generateOutlookSignature = (
             data.website2
               ? `<a
             href="https://adonworkforce.com.au/"
-            style="font-size: 14px; color: #fff; text-decoration: none; display: flex; align-items: center;"
+            style="font-size: 12px; color: #fff; text-decoration: none; display: flex; align-items: center;"
           >
             <img
               src="https://adongroup.com.au/wp-content/uploads/2024/12/globe.png"
               style="
-                width: 15px;
-                height: 15px;
+                width: 14px;
+                height: 14px;
                 margin-right: 10px;
                 object-fit: contain;
               "
@@ -104,7 +104,7 @@ export const generateOutlookSignature = (
   </tbody>
 </table>`,
 
-    classic: `
+    design2: `
 <table cellpadding="0" cellspacing="0" style="font-family: Times New Roman, serif; font-size: 14px; color: #2c2c2c; max-width: 500px;">
   <tr>
     <td>
@@ -161,7 +161,7 @@ export const generateMondaySignature = (
 ) => {
   // For Monday, we'll use simplified versions that work well in their system
   const designs = {
-    modern: `
+    design1: `
 <table
   class="sig-cont"
   style="
@@ -170,39 +170,40 @@ export const generateMondaySignature = (
     border-radius: 15px;
     padding: 20px;
     width: 650px;
-    background-image: url('adon_bg.png');
+    background-image: url('https://raw.githubusercontent.com/noucodes/adon-email/refs/heads/main/public/adon-bg.png');
     background-repeat: no-repeat;
     background-position: center;
+    font-family: Arial, sans-serif;
   "
 >
-  <tbody>
-    <tr style="margin: 0; padding: 0; height: 135px">
-      <td class="aog-logo" style="width: 40%">
+  <tbody style="margin: 20px;">
+    <tr style="margin: 0; padding: 0; height: 140px">
+      <td class="aog-logo" style="width: 35%; padding: 10px 0 0 20px;">
         <img
           src="https://adongroup.com.au/wp-content/uploads/2024/12/AdonGroup.png"
-          style="width: 80%"
+          style="width: 90%"
         />
       </td>
 
-      <td style="width: 60%">
-        <div class="name-position-cont" style="font-size: 21px; line-height: 1">
+      <td style="width: 65%; padding: 10px 0 0 0;">
+        <div class="name-position-cont" style="font-size: 21px; line-height: .5">
           <strong style="line-height: 1.5">${data.name}</strong><br />
-          <strong style="font-size: 12px; margin-top: 10px; margin-bottom: 0"
+          <strong style="font-size: 12px;"
             >${data.title}</strong
-          ><br /><br />
+          ><br /><br /><br />
         </div>
-        <div class="links-cont" style="line-height: 1">
+        <div class="links-cont" style="line-height: .6">
         ${
           data.phone
             ? `<a
             href="tel:${data.phone}"
-            style="font-size: 14px; color: #fff; text-decoration: none; display: flex"
+            style="font-size: 12px; color: #fff; text-decoration: none; display: flex; align-items: center;"
           >
             <img
               src="https://adongroup.com.au/wp-content/uploads/2024/12/phone-call.png"
               style="
-                width: 15px;
-                height: 15px;
+                width: 14px;
+                height: 14px;
                 margin-right: 10px;
                 object-fit: contain;
               "
@@ -212,46 +213,54 @@ export const generateMondaySignature = (
             : ""
         }
 
-          <a
+        ${
+          data.website1
+            ? `<a
             href="https://adongroup.com.au/"
-            style="font-size: 14px; color: #fff; text-decoration: none; display: flex"
+            style="font-size: 12px; color: #fff; text-decoration: none; display: flex; align-items: center;"
           >
             <img
               src="https://adongroup.com.au/wp-content/uploads/2024/12/globe.png"
               style="
-                width: 15px;
-                height: 15px;
+                width: 14px;
+                height: 14px;
                 margin-right: 10px;
                 object-fit: contain;
               "
             />
-            www.adongroup.com.au </a
-          ><br />
-          <a
+            ${data.website1} </a
+          ><br />`
+            : ""
+        }
+          ${
+            data.website2
+              ? `<a
             href="https://adonworkforce.com.au/"
-            style="font-size: 14px; color: #fff; text-decoration: none; display: flex"
+            style="font-size: 12px; color: #fff; text-decoration: none; display: flex; align-items: center;"
           >
             <img
               src="https://adongroup.com.au/wp-content/uploads/2024/12/globe.png"
               style="
-                width: 15px;
-                height: 15px;
+                width: 14px;
+                height: 14px;
                 margin-right: 10px;
                 object-fit: contain;
               "
             />
-            www.adonworkforce.com.au
-          </a>
+            ${data.website2}
+          </a>`
+              : ""
+          }
         </div>
       </td>
     </tr>
-    <tr style="margin: 0; padding: 0; height: 90px">
+    <tr style="margin: 0; padding: 0; height: 100px">
       <td></td>
     </tr>
   </tbody>
 </table>`,
 
-    classic: `
+    design2: `
 <div style="font-family: 'Times New Roman', serif; font-size: 14px; color: #2c2c2c; max-width: 500px; padding: 16px; border: 1px solid #ccc; background-color: #fff;">
   <div style="font-size: 18px; font-weight: bold; color: #1a1a1a; margin-bottom: 6px;">${
     data.name

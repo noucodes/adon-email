@@ -27,7 +27,7 @@ import { designOptions } from "@/app/data/designOptions";
 import SignaturePreview from "@/components/preview";
 
 export default function EmailSignatureMaker() {
-  const [selectedDesign, setSelectedDesign] = useState<DesignType>("modern");
+  const [selectedDesign, setSelectedDesign] = useState<DesignType>("design1");
   const [signatureData, setSignatureData] = useState<SignatureData>({
     name: "John Doe",
     title: "Senior Developer",
@@ -236,9 +236,9 @@ export default function EmailSignatureMaker() {
                       </div>
                     </div>
                     <div className="text-xs text-gray-500">
-                      {design.value === "modern" &&
-                        "Clean design with colored accents and modern typography"}
-                      {design.value === "classic" &&
+                      {design.value === "design1" &&
+                        "Clean design with colored accents and design1 typography"}
+                      {design.value === "design2" &&
                         "Traditional serif fonts with professional styling"}
                       {design.value === "minimal" &&
                         "Simple, clean layout with minimal visual elements"}

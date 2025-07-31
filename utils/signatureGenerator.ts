@@ -29,7 +29,7 @@ export const generateOutlookSignature = (
       style="width: 35%; padding: 10px 10px 10px 20px; vertical-align: top;"
     >
       <img
-        src="https://adongroup.com.au/wp-content/uploads/2024/12/AdonGroup.png"
+        src="https://raw.githubusercontent.com/noucodes/adon-email/refs/heads/main/public/adon-logo.png"
         style="max-width: 100%; height: auto; display: block;"
         alt="Adon Group Logo"
       />

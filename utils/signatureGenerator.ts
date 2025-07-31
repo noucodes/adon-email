@@ -22,7 +22,7 @@ export const generateOutlookSignature = (
     font-family: Arial, sans-serif;
   "
 >
-  <tr style="vertical-align: top;">
+  <tr style="vertical-align: top; height: 135px;">
     <td
       class="aog-logo"
       style="width: 35%; margin: 10px 10px 10px 30px; vertical-align: top; background-image:url('https://raw.githubusercontent.com/noucodes/adon-email/refs/heads/main/public/adon-logo.png'); height:auto; background-repeat: no-repeat; background-size: center;
@@ -31,10 +31,10 @@ background-position: right bottom; background-size: 200px auto;"
       <div style="width:100%"></div>
     </td>
 
-    <td style="width: 65%; padding: 10px 10px 10px 20px; vertical-align: top;">
+    <td style="width: 65%; padding: 10px 10px 10px 50px; vertical-align: top;">
       <div
         class="name-position-cont"
-        style="font-size: 21px; margin-bottom: 10px;"
+        style="font-size: 21px; margin-bottom: 10px; padding-left:20px;"
       >
         <p style="line-height: 1.4; font-weight: 700; margin: 0;">
           ${data.name}

@@ -10,35 +10,36 @@ export const generateOutlookSignature = (
   class="sig-cont"
   cellpadding="0"
   cellspacing="0"
+  width="100%"
   style="
     background-color: #000;
     color: #fff;
     border-radius: 15px;
     padding: 20px;
-    width: 650px;
+    width: auto;
+    max-width: 650px;
     background-image: url('https://raw.githubusercontent.com/noucodes/adon-email/refs/heads/main/public/adon-bg.png');
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: contain;
     font-family: Arial, sans-serif;
   "
 >
   <tr style="vertical-align: top;">
     <td
       class="aog-logo"
-      style="width: 35%; padding: 10px 10px 10px 20px; vertical-align: top;"
+      style="width: 270px; padding: 10px 10px 10px 20px; vertical-align: top;"
     >
-      
     </td>
 
-    <td style="width: 65%; padding: 10px 10px 10px 0; vertical-align: top;">
+    <td style="width: 60%; padding: 20px 10px 10px 0; vertical-align: top;">
       <div
         class="name-position-cont"
-        style="font-size: 21px; margin-bottom: 10px;"
+        style="font-size: 1.4em; margin-bottom: 10px;"
       >
-        <p style="line-height: 1.4; font-weight: 700; margin: 0;">
+        <p style="line-height: 1.2; font-weight: 700; margin: 0;">
           ${data.name}
         </p>
-        <p style="font-size: 12px; margin: 0;">${data.title}</p>
+        <p style="font-size: .5em; margin: 0;">${data.title}</p>
       </div>
 
       <div class="links-cont" style="line-height: 1.2;">
@@ -52,7 +53,7 @@ export const generateOutlookSignature = (
             />
             <a
               href="tel:${data.phone}"
-              style="font-size: 12px; color: #fff; text-decoration: none; display: inline-block; vertical-align: middle;"
+              style="font-size: .8em; color: #fff; text-decoration: none; display: inline-block; vertical-align: middle;"
             >
               ${data.phone}
             </a>
@@ -70,7 +71,7 @@ export const generateOutlookSignature = (
             />
             <a
               href="https://adongroup.com.au/"
-              style="font-size: 12px; color: #fff; text-decoration: none; display: inline-block; vertical-align: middle;"
+              style="font-size: .8em; color: #fff; text-decoration: none; display: inline-block; vertical-align: middle;"
             >
               ${data.website1}
             </a>
@@ -88,7 +89,7 @@ export const generateOutlookSignature = (
             />
             <a
               href="https://adonworkforce.com.au/"
-              style="font-size: 12px; color: #fff; text-decoration: none; display: inline-block; vertical-align: middle;"
+              style="font-size: .8em; color: #fff; text-decoration: none; display: inline-block; vertical-align: middle;"
             >
               ${data.website2}
             </a>

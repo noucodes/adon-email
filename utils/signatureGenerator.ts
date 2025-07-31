@@ -34,7 +34,7 @@ background-position: right bottom; background-size: 200px auto;"
     <td style="width: 65%; padding: 10px 10px 10px 50px; vertical-align: top;">
       <div
         class="name-position-cont"
-        style="font-size: 21px; margin-bottom: 10px; padding-left:20px;"
+        style="font-size: 21px; margin-bottom: 10px; padding-left:25px;"
       >
         <p style="line-height: 1.4; font-weight: 700; margin: 0;">
           ${data.name}
@@ -252,7 +252,7 @@ background-position: right bottom; background-size: 200px auto;"
     <td style="width: 65%; padding: 10px 10px 10px 50px; vertical-align: top;">
       <div
         class="name-position-cont"
-        style="font-size: 21px; margin-bottom: 10px; padding-left:20px;"
+        style="font-size: 21px; margin-bottom: 10px; padding-left:30px;"
       >
         <p style="line-height: 1.4; font-weight: 700; margin: 0;">
           ${data.name}

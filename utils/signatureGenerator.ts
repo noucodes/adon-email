@@ -15,8 +15,7 @@ export const generateOutlookSignature = (
     color: #fff;
     border-radius: 15px;
     padding: 20px;
-    max-width: 650px;
-    width: 100%;
+    width: 650px;
     background-image: url('https://raw.githubusercontent.com/noucodes/adon-email/refs/heads/main/public/adon-bg.png');
     background-repeat: no-repeat;
     background-position: center;
@@ -26,16 +25,13 @@ export const generateOutlookSignature = (
   <tr style="vertical-align: top;">
     <td
       class="aog-logo"
-      style="width: 35%; padding: 10px 10px 10px 20px; vertical-align: top;"
+      style="width: 35%; margin: 10px 10px 10px 30px; vertical-align: top; background-image:url('https://raw.githubusercontent.com/noucodes/adon-email/refs/heads/main/public/adon-logo.png'); height:auto; background-repeat: no-repeat; background-size: center;
+background-position: right bottom; background-size: 200px auto;"
     >
-      <img
-        src="https://raw.githubusercontent.com/noucodes/adon-email/refs/heads/main/public/adon-logo.png"
-        style="max-width: 100%; height: auto; display: block;"
-        alt="Adon Group Logo"
-      />
+      <div style="width:100%"></div>
     </td>
 
-    <td style="width: 65%; padding: 10px 10px 10px 0; vertical-align: top;">
+    <td style="width: 65%; padding: 10px 10px 10px 20px; vertical-align: top;">
       <div
         class="name-position-cont"
         style="font-size: 21px; margin-bottom: 10px;"
@@ -103,7 +99,7 @@ export const generateOutlookSignature = (
       </div>
     </td>
   </tr>
-  <tr style="margin: 0; padding: 0; height: 80px">
+  <tr style="margin: 0; padding: 0; height: 100px">
       <td></td>
     </tr>
 </table>`,

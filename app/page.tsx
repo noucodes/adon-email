@@ -31,9 +31,7 @@ export default function EmailSignatureMaker() {
   const [signatureData, setSignatureData] = useState<SignatureData>({
     name: "John Doe",
     title: "Senior Developer",
-    phone: "+1 (555) 123-4567",
-    linkedin: "https://linkedin.com/in/johndoe",
-    twitter: "https://twitter.com/johndoe",
+    phone: "07 5586 1400",
     website1: "www.adongroup.com.au",
     website2: "www.adonworkforce.com.au",
   });

@@ -234,93 +234,130 @@ export const generateMondaySignature = (
     border-radius: 15px;
     padding: 20px;
     width: 650px;
-    background-image: url('https://raw.githubusercontent.com/noucodes/adon-email/refs/heads/main/public/adon-bg.png');
+    background-image: url('https://raw.githubusercontent.com/noucodes/adon-email/refs/heads/main/public/adon-bg2.png');
     background-repeat: no-repeat;
     background-position: center;
     font-family: Arial, sans-serif;
   "
 >
-  <tr style="vertical-align: top; height: 138px;">
+  <tr style="vertical-align: top; height: 138px">
     <td
       class="aog-logo"
-      style="width: 35%; margin: 10px 10px 10px 30px; vertical-align: top; background-image:url('https://raw.githubusercontent.com/noucodes/adon-email/refs/heads/main/public/adon-logo.png'); height:auto; background-repeat: no-repeat; background-size: center;
-background-position: right bottom; background-size: 200px auto;"
-    >
-      <div style="width:100%"></div>
-    </td>
+      style="
+        width: 35%;
+        margin: 10px 10px 10px 30px;
+      "
+    ></td>
 
-    <td style="width: 65%; padding: 10px 10px 10px 50px; vertical-align: top;">
+    <td style="width: 65%; padding: 20px 10px 10px 50px; vertical-align: top">
       <div
         class="name-position-cont"
-        style="font-size: 21px; margin-bottom: 10px; padding-left:25px;"
+        style="font-size: 21px; margin-bottom: 10px; padding-left: 25px"
       >
-        <p style="line-height: 1.4; font-weight: 700; margin: 0;">
+        <p style="line-height: 1.4; font-weight: 700; margin: 0">
           ${data.name}
         </p>
-        <p style="font-size: 12px; margin: 0;">${data.title}</p>
+        <p style="font-size: 12px; margin: 0">${data.title}</p>
       </div>
 
-      <div class="links-cont" style="line-height: 1.2;">
-        ${
-          data.phone
-            ? `<div style="">
-            <img
-              src="https://raw.githubusercontent.com/noucodes/adon-email/refs/heads/main/public/phone-call.png"
-              style="width: 14px; height: 14px; margin-right: 8px; display: inline-block; vertical-align: middle;"
-              alt="Phone"
-            />
-            <a
-              href="tel:${data.phone}"
-              style="font-size: 12px; color: #fff; text-decoration: none; display: inline-block; vertical-align: middle;"
-            >
-              ${data.phone}
-            </a>
-          </div>`
-            : ""
-        }
-
+      <div class="links-cont" style="line-height: 1.2">
+        <div style="">
+          <img
+            src="https://raw.githubusercontent.com/noucodes/adon-email/refs/heads/main/public/phone-call.png"
+            style="
+              width: 14px;
+              height: 14px;
+              margin-right: 8px;
+              display: inline-block;
+              vertical-align: middle;
+            "
+            alt="Phone"
+          />
+          ${
+            data.phone
+              ? `
+          <a
+            href="tel:${data.phone}"
+            style="
+              font-size: 12px;
+              color: #fff;
+              text-decoration: none;
+              display: inline-block;
+              vertical-align: middle;
+            "
+          >
+            ${data.phone}
+          </a>`
+              : ""
+          }
+        </div>
         ${
           data.website1
-            ? `<div style="">
-            <img
-              src="https://raw.githubusercontent.com/noucodes/adon-email/refs/heads/main/public/globe.png"
-              style="width: 14px; height: 14px; margin-right: 8px; display: inline-block; vertical-align: middle;"
-              alt="Website"
-            />
-            <a
-              href="https://adongroup.com.au/"
-              style="font-size: 12px; color: #fff; text-decoration: none; display: inline-block; vertical-align: middle;"
-            >
-              ${data.website1}
-            </a>
-          </div>`
+            ? `
+        <div style="">
+          <img
+            src="https://raw.githubusercontent.com/noucodes/adon-email/refs/heads/main/public/globe.png"
+            style="
+              width: 14px;
+              height: 14px;
+              margin-right: 8px;
+              display: inline-block;
+              vertical-align: middle;
+            "
+            alt="Website"
+          />
+          <a
+            href="https://adongroup.com.au/"
+            style="
+              font-size: 12px;
+              color: #fff;
+              text-decoration: none;
+              display: inline-block;
+              vertical-align: middle;
+            "
+          >
+            ${data.website1}
+          </a>
+        </div>`
             : ""
         }
-
         ${
-          data.website2
-            ? `<div style="">
-            <img
-              src="https://raw.githubusercontent.com/noucodes/adon-email/refs/heads/main/public/globe.png"
-              style="width: 14px; height: 14px; margin-right: 8px; display: inline-block; vertical-align: middle;"
-              alt="Website"
-            />
-            <a
-              href="https://adonworkforce.com.au/"
-              style="font-size: 12px; color: #fff; text-decoration: none; display: inline-block; vertical-align: middle;"
-            >
-              ${data.website2}
-            </a>
-          </div>`
+          data.phone
+            ? `
+        <div style="">
+          <img
+            src="https://raw.githubusercontent.com/noucodes/adon-email/refs/heads/main/public/globe.png"
+            style="
+              width: 14px;
+              height: 14px;
+              margin-right: 8px;
+              display: inline-block;
+              vertical-align: middle;
+            "
+            alt="Website"
+          />
+          <a
+            href="https://adonworkforce.com.au/"
+            style="
+              font-size: 12px;
+              color: #fff;
+              text-decoration: none;
+              display: inline-block;
+              vertical-align: middle;
+            "
+            >${data.website2}
+          </a>
+        </div>`
             : ""
         }
       </div>
     </td>
   </tr>
   <tr style="margin: 0; padding: 0; height: 100px">
-      <td></td>
-    </tr>
-</table>`,
+    <td></td>
+  </tr>
+</table>
+`,
 
     design2: `
 <table

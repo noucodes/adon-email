@@ -224,7 +224,7 @@ export const generateMondaySignature = (
   // For Monday, we'll use simplified versions that work well in their system
   const designs = {
     design1: `
-<table
+    <table
   class="sig-cont"
   cellpadding="0"
   cellspacing="0"
@@ -240,7 +240,7 @@ export const generateMondaySignature = (
     font-family: Arial, sans-serif;
   "
 >
-  <tr style="vertical-align: top; height: 135px;">
+  <tr style="vertical-align: top; height: 138px;">
     <td
       class="aog-logo"
       style="width: 35%; margin: 10px 10px 10px 30px; vertical-align: top; background-image:url('https://raw.githubusercontent.com/noucodes/adon-email/refs/heads/main/public/adon-logo.png'); height:auto; background-repeat: no-repeat; background-size: center;
@@ -252,7 +252,7 @@ background-position: right bottom; background-size: 200px auto;"
     <td style="width: 65%; padding: 10px 10px 10px 50px; vertical-align: top;">
       <div
         class="name-position-cont"
-        style="font-size: 21px; margin-bottom: 10px; padding-left:30px;"
+        style="font-size: 21px; margin-bottom: 10px; padding-left:25px;"
       >
         <p style="line-height: 1.4; font-weight: 700; margin: 0;">
           ${data.name}
@@ -265,7 +265,7 @@ background-position: right bottom; background-size: 200px auto;"
           data.phone
             ? `<div style="">
             <img
-              src="https://adongroup.com.au/wp-content/uploads/2024/12/phone-call.png"
+              src="https://raw.githubusercontent.com/noucodes/adon-email/refs/heads/main/public/phone-call.png"
               style="width: 14px; height: 14px; margin-right: 8px; display: inline-block; vertical-align: middle;"
               alt="Phone"
             />
@@ -283,7 +283,7 @@ background-position: right bottom; background-size: 200px auto;"
           data.website1
             ? `<div style="">
             <img
-              src="https://adongroup.com.au/wp-content/uploads/2024/12/globe.png"
+              src="https://raw.githubusercontent.com/noucodes/adon-email/refs/heads/main/public/globe.png"
               style="width: 14px; height: 14px; margin-right: 8px; display: inline-block; vertical-align: middle;"
               alt="Website"
             />
@@ -301,7 +301,7 @@ background-position: right bottom; background-size: 200px auto;"
           data.website2
             ? `<div style="">
             <img
-              src="https://adongroup.com.au/wp-content/uploads/2024/12/globe.png"
+              src="https://raw.githubusercontent.com/noucodes/adon-email/refs/heads/main/public/globe.png"
               style="width: 14px; height: 14px; margin-right: 8px; display: inline-block; vertical-align: middle;"
               alt="Website"
             />

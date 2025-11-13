@@ -68,10 +68,10 @@ export default function EmailSignatureMaker() {
         />
         <div className="text-center mb-8">
           <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-blue-950 bg-clip-text text-transparent mb-4">
-            ADONPH
+            Ad On Group
           </h1>
           <p className="text-gray-600 text-lg">
-            Create professional email signatures with multiple design options
+            Get your professional email signature in minutes!
           </p>
         </div>
 
@@ -106,9 +106,6 @@ export default function EmailSignatureMaker() {
                           <selectedDesignOption.icon className="h-4 w-4" />
                         )}
                         <span>{selectedDesignOption?.label}</span>
-                        <span className="text-sm text-gray-500">
-                          - {selectedDesignOption?.description}
-                        </span>
                       </div>
                     </SelectValue>
                   </SelectTrigger>
@@ -215,11 +212,10 @@ export default function EmailSignatureMaker() {
                 {designOptions.map((design) => (
                   <div
                     key={design.value}
-                    className={`p-4 rounded-lg border-2 cursor-pointer transition-all ${
-                      selectedDesign === design.value
-                        ? "border-blue-500 bg-blue-50/50"
-                        : "border-gray-200 hover:border-gray-300 bg-white/50"
-                    }`}
+                    className={`p-4 rounded-lg border-2 cursor-pointer transition-all ${selectedDesign === design.value
+                      ? "border-blue-500 bg-blue-50/50"
+                      : "border-gray-200 hover:border-gray-300 bg-white/50"
+                      }`}
                     onClick={() =>
                       setSelectedDesign(design.value as DesignType)
                     }

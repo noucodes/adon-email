@@ -212,6 +212,128 @@ background-position: right bottom; background-size: 200px auto;"
       <td></td>
     </tr>
 </table>`,
+    adonworkforce: `
+<table
+  cellpadding="0"
+  cellspacing="0"
+  style="
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    background-color: #000000;
+    border-collapse: collapse;
+    max-width: 650px;
+    width: 100%;
+    border-radius: 15px;
+  "
+>
+  <tr>
+    <td style="padding: 20px; border-radius: 15px;">
+      <table cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+          <td style="vertical-align: top; width: 60%;">
+            <img
+              src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/AOW-logo.ee764c1e.svg"
+              alt="AOW logo"
+              width="330"
+              style="display: block;"
+            />
+            <div
+              style="
+                font-weight: bold;
+                font-size: 12px;
+                margin-top: 5px;
+                margin-left: 5px;
+              "
+            >
+              A division of Ad On Group
+            </div>
+          </td>
+
+          <td style="vertical-align: top;">
+            <table cellpadding="0" cellspacing="0" style="color: #ffffff;">
+              <tr>
+                <td style="font-weight: bold; font-size: 16px;">
+                  ${data.name || "Your Name"}
+                </td>
+              </tr>
+              <tr>
+                <td style="font-size: 13px; padding-bottom: 10px;">
+                  ${data.title || "Your Position"}
+                </td>
+              </tr>
+              <tr>
+                <td style="font-size: 12px; line-height: 20px;">
+                  ${
+                    data.phone
+                      ? `<a href="tel:${data.phone}" style="color: #ffffff; text-decoration: none;">
+                        <img
+                          src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/phone-call.fb194a64.svg"
+                          alt="Phone"
+                          width="14"
+                          style="vertical-align: middle; display: inline-block;"
+                        />
+                        &nbsp;${data.phone}
+                      </a><br />`
+                      : ""
+                  }
+
+                  ${
+                    data.website1
+                      ? `<a href="${
+                          data.website1
+                        }" style="color: #ffffff; text-decoration: none;">
+                        <img
+                          src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/globe.005b6416.svg"
+                          alt="Website"
+                          width="14"
+                          style="vertical-align: middle; display: inline-block;"
+                        />
+                        &nbsp;${data.website1
+                          .replace("https://", "")
+                          .replace("www.", "")}
+                      </a><br />`
+                      : ""
+                  }
+
+                  ${
+                    data.website2
+                      ? `<a href="${
+                          data.website2
+                        }" style="color: #ffffff; text-decoration: none;">
+                        <img
+                          src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/globe.005b6416.svg"
+                          alt="Website"
+                          width="14"
+                          style="vertical-align: middle; display: inline-block;"
+                        />
+                        &nbsp;${data.website2
+                          .replace("https://", "")
+                          .replace("www.", "")}
+                      </a>`
+                      : ""
+                  }
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2" style="padding-top: 10px; font-size: 9px; color: #ffffff; text-align: justify;">
+            This email, its contents and any attachments are strictly confidential.
+            They must not be used, distributed, copied or read by any person other
+            than the addressee. Unauthorised use, disclosure, copying or reliance on
+            the contents of and attachments to this email by anyone other than the
+            addressee may be unlawful. If you have received this email and attachments
+            in error please contact us at Ad on Group immediately to facilitate its
+            return.
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+`,
   };
 
   return designs[design].trim();
@@ -467,6 +589,50 @@ export const generateMondaySignature = (
       <td></td>
     </tr>
 </table>`,
+    adonworkforce: `<table cellpadding="0" cellspacing="0" style="font-family: Arial, sans-serif; color: #ffffff; background-color: #000000; padding: 10px; border-collapse: collapse;">
+  <tr>
+    <td style="vertical-align: top; padding-right: 20px;">
+      <img src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/AOW-logo.ee764c1e.svg" alt="AOW logo" width="180" style="display: block;">
+      <div style="font-weight: bold; font-size: 12px; margin-top: 5px;">A division of Ad On Group</div>
+    </td>
+
+    <td style="vertical-align: top;">
+      <table cellpadding="0" cellspacing="0" style="color: #ffffff;">
+        <tr>
+          <td style="font-weight: bold; font-size: 16px;">Your Name</td>
+        </tr>
+        <tr>
+          <td style="font-size: 13px; padding-bottom: 10px;">Your Position</td>
+        </tr>
+        <tr>
+          <td style="font-size: 12px; line-height: 20px;">
+            <a href="tel:07 5586 1400" style="color: #ffffff; text-decoration: none;">
+              <img src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/phone-call.fb194a64.svg" alt="Phone" width="14" style="vertical-align: middle;display: inline-block;"> 
+              &nbsp;07 5586 1400
+            </a>
+            <br>
+            <a href="https://www.adongroup.com.au" style="color: #ffffff; text-decoration: none;">
+              <img src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/globe.005b6416.svg" alt="Website" width="14" style="vertical-align: middle;display: inline-block; "> 
+              &nbsp;www.adongroup.com.au
+            </a>
+            <br>
+            <a href="https://www.adonworkforce.com.au" style="color: #ffffff; text-decoration: none;">
+              <img src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/globe.005b6416.svg" alt="Website" width="14" style="vertical-align: middle;display: inline-block; "> 
+              &nbsp;www.adonworkforce.com.au
+            </a>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" style="padding-top: 10px; font-size: 9px; color: #ffffff; text-align: justify;">
+      This email, its contents and any attachments are strictly confidential. They must not be used, distributed, copied or read by any person other than the addresses. Unauthorised use, disclosure, copying or reliance on the contents of and attachments to this email by anyone other than the addresses may be unlawful. If you have received this email and attachments in error please contact us at Ad on Group immediately to facilitate its return.
+    </td>
+  </tr>
+</table>
+`,
   };
 
   return designs[design].trim();

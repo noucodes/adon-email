@@ -1,5 +1,5 @@
 // Defines allowed design keys
-export type DesignType = "design1" | "design2";
+export type DesignType = "design1" | "design2" | "adonworkforce";
 
 // Data entered by the user in the form
 export interface SignatureData {

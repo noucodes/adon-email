@@ -7,8 +7,8 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "ADONPH",
-  description: "AdonPH Email Signature",
+  title: "Adon Group Email Signature Generator",
+  description: "Adon Group Email Signature",
 };
 
 export default function RootLayout({

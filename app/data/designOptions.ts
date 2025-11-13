@@ -1,4 +1,4 @@
-import { Sparkles, QrCode, User } from "lucide-react";
+import { Sparkles, User } from "lucide-react";
 
 export const designOptions = [
   {

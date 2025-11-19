@@ -104,113 +104,147 @@ background-position: right bottom; background-size: 200px auto;"
     </tr>
 </table>`,
 
-    design2: `
+    adonsa: `
 <table
-  class="sig-cont"
   cellpadding="0"
   cellspacing="0"
   style="
-    background-color: #000;
-    color: #fff;
-    border-radius: 15px;
-    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    background-color: #000000;
+    border-collapse: collapse;
     max-width: 650px;
     width: 100%;
-    background-image: url('https://raw.githubusercontent.com/noucodes/adon-email/refs/heads/main/public/adon-bg.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    font-family: Arial, sans-serif;
+    border-radius: 15px;
   "
 >
-  <tr style="vertical-align: top;">
-    <td
-      class="aog-logo"
-      style="width: 35%; padding: 10px 10px 10px 20px; vertical-align: top;"
-    >
-      <img
-        src="https://adongroup.com.au/wp-content/uploads/2024/12/AdonGroup.png"
-        style="max-width: 100%; height: auto; display: block;"
-        alt="Adon Group Logo"
-      />
+  <tr>
+    <td style="padding: 20px; border-radius: 15px;">
+      <table cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+          <td style="vertical-align: top; width: 40%; text-align: center;">
+            <img
+              src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/adonsa-logo+(1).png"
+              alt="AOW SA logo"
+              width="170"
+              draggable="false"
+              style="
+                display: block;
+                pointer-events: none;
+              "
+            />
+            <img
+              src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/AOW-logo.ee764c1e.png"
+              alt="AOW logo"
+              width="170"
+              draggable="false"
+              style="
+                display: block;
+                pointer-events: none;
+              "
+            />
+          </td>
+
+          <td style="vertical-align: top;">
+            <table cellpadding="0" cellspacing="0" style="color: #ffffff;">
+              <tr>
+                <td style="font-weight: bold; font-size: 16px;">
+                  ${data.name || "Your Name"}
+                </td>
+              </tr>
+              <tr>
+                <td style="font-size: 13px; padding-bottom: 10px;">
+                  ${data.title || "Your Position"}
+                </td>
+              </tr>
+              <tr>
+                <td style="font-size: 12px; line-height: 20px;">
+
+                  ${
+                    data.phone
+                      ? `<a href="tel:${data.phone}" style="color: #ffffff; text-decoration: none;">
+                        <img
+                          src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/phone-call.fb194a64.png"
+                          alt="Phone"
+                          width="14"
+                          draggable="false"
+                          style="
+                            vertical-align: middle;
+                            display: inline-block;
+                            pointer-events: none;
+                          "
+                        />
+                        &nbsp;${data.phone}
+                      </a><br />`
+                      : ""
+                  }
+
+                  ${
+                    data.website1
+                      ? `<a href="${
+                          data.website1
+                        }" style="color: #ffffff; text-decoration: none;">
+                        <img
+                          src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/globe.005b6416.png"
+                          alt="Website"
+                          width="14"
+                          draggable="false"
+                          style="
+                            vertical-align: middle;
+                            display: inline-block;
+                            pointer-events: none;
+                          "
+                        />
+                        &nbsp;${data.website1
+                          .replace("https://", "")
+                          .replace("www.", "")}
+                      </a><br />`
+                      : ""
+                  }
+
+                  ${
+                    data.website2
+                      ? `<a href="${
+                          data.website2
+                        }" style="color: #ffffff; text-decoration: none;">
+                        <img
+                          src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/globe.005b6416.png"
+                          alt="Website"
+                          width="14"
+                          draggable="false"
+                          style="
+                            vertical-align: middle;
+                            display: inline-block;
+                            pointer-events: none;
+                          "
+                        />
+                        &nbsp;${data.website2
+                          .replace("https://", "")
+                          .replace("www.", "")}
+                      </a>`
+                      : ""
+                  }
+
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2" style="padding-top: 10px; font-size: 9px; color: #ffffff; text-align: justify;">
+            This email, its contents and any attachments are strictly confidential.
+            They must not be used, distributed, copied or read by any person other
+            than the addressee. Unauthorised use, disclosure, copying or reliance on
+            the contents of and attachments to this email by anyone other than the
+            addressee may be unlawful. If you have received this email and attachments
+            in error please contact us at Ad on Group immediately to facilitate its
+            return.
+          </td>
+        </tr>
+      </table>
     </td>
-
-    <td style="width: 45%; padding: 10px 10px 10px 0; vertical-align: top;">
-      <div
-        class="name-position-cont"
-        style="font-size: 21px; margin-bottom: 10px;"
-      >
-        <p style="line-height: 1.4; font-weight: 700; margin: 0;">
-          ${data.name}
-        </p>
-        <p style="font-size: 12px; margin: 0;">${data.title}</p>
-      </div>
-
-      <div class="links-cont" style="line-height: 1.2;">
-        ${
-          data.phone
-            ? `<div style="">
-            <img
-              src="https://adongroup.com.au/wp-content/uploads/2024/12/phone-call.png"
-              style="width: 14px; height: 14px; margin-right: 8px; display: inline-block; vertical-align: middle;"
-              alt="Phone"
-            />
-            <a
-              href="tel:${data.phone}"
-              style="font-size: 12px; color: #fff; text-decoration: none; display: inline-block; vertical-align: middle;"
-            >
-              ${data.phone}
-            </a>
-          </div>`
-            : ""
-        }
-
-        ${
-          data.website1
-            ? `<div style="">
-            <img
-              src="https://adongroup.com.au/wp-content/uploads/2024/12/globe.png"
-              style="width: 14px; height: 14px; margin-right: 8px; display: inline-block; vertical-align: middle;"
-              alt="Website"
-            />
-            <a
-              href="https://adongroup.com.au/"
-              style="font-size: 12px; color: #fff; text-decoration: none; display: inline-block; vertical-align: middle;"
-            >
-              ${data.website1}
-            </a>
-          </div>`
-            : ""
-        }
-
-        ${
-          data.website2
-            ? `<div style="">
-            <img
-              src="https://adongroup.com.au/wp-content/uploads/2024/12/globe.png"
-              style="width: 14px; height: 14px; margin-right: 8px; display: inline-block; vertical-align: middle;"
-              alt="Website"
-            />
-            <a
-              href="https://adonworkforce.com.au/"
-              style="font-size: 12px; color: #fff; text-decoration: none; display: inline-block; vertical-align: middle;"
-            >
-              ${data.website2}
-            </a>
-          </div>`
-            : ""
-        }
-      </div>
-    </td>
-    <td class="adon-qr" style="width: 25%; padding: 10px 0 0 0;">
-      <img
-          src="https://raw.githubusercontent.com/noucodes/adon-email/refs/heads/main/public/adon-qr.png"
-          style="width: 75%"
-        />
-      </td>
   </tr>
-  <tr style="margin: 0; padding: 0; height: 80px">
-      <td></td>
-    </tr>
 </table>`,
     adonworkforce: `
     <table
@@ -230,7 +264,7 @@ background-position: right bottom; background-size: 200px auto;"
     <td style="padding: 20px; border-radius: 15px;">
       <table cellpadding="0" cellspacing="0" width="100%">
         <tr>
-          <td style="vertical-align: top; width: 60%;">
+          <td style="vertical-align: top; width: 60%; text-align: center;">
             <img
               src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/AOW-logo.ee764c1e.png"
               alt="AOW logo"
@@ -246,7 +280,7 @@ background-position: right bottom; background-size: 200px auto;"
                 font-weight: bold;
                 font-size: 12px;
                 margin-top: 5px;
-                margin-left: 5px;
+                width: 330px;
               "
             >
               A division of Ad On Group
@@ -502,7 +536,7 @@ export const generateMondaySignature = (
 </table>
 `,
 
-    design2: `
+    adonsa: `
 <table
   class="sig-cont"
   cellpadding="0"

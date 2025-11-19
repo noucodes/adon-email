@@ -11,6 +11,12 @@ export const designOptions = [
     value: "adonworkforce",
     label: "Adon Workforce",
     icon: User,
-    description: "The new ADON Workforce Email Signature",
+    description: "The ADON Workforce Email Signature",
+  },
+  {
+    value: "adonsa",
+    label: "Adon Workforce South Africa",
+    icon: User,
+    description: "The ADON Workforce South Africa Email Signature",
   },
 ];

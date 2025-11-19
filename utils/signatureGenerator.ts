@@ -121,118 +121,159 @@ background-position: right bottom; background-size: 200px auto;"
   <tr>
     <td style="padding: 20px; border-radius: 15px;">
       <table cellpadding="0" cellspacing="0" width="100%">
+
+        <!-- TOP SECTION: LEFT LOGO + DETAILS -->
         <tr>
+          <!-- LEFT LOGO -->
           <td style="vertical-align: top; width: 40%; text-align: center;">
             <img
               src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/adonsa-logo+(1).png"
               alt="AOW SA logo"
-              width="170"
+              width="200"
               draggable="false"
-              style="
-                display: block;
-                pointer-events: none;
-              "
-            />
-            <img
-              src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/AOW-logo.ee764c1e.png"
-              alt="AOW logo"
-              width="170"
-              draggable="false"
-              style="
-                display: block;
-                pointer-events: none;
-              "
+              style="display: block; pointer-events: none;"
             />
           </td>
 
+          <!-- RIGHT DETAILS -->
           <td style="vertical-align: top;">
             <table cellpadding="0" cellspacing="0" style="color: #ffffff;">
+
+              <!-- NAME -->
               <tr>
                 <td style="font-weight: bold; font-size: 16px;">
                   ${data.name || "Your Name"}
                 </td>
               </tr>
+
+              <!-- TITLE -->
               <tr>
                 <td style="font-size: 13px; padding-bottom: 10px;">
                   ${data.title || "Your Position"}
                 </td>
               </tr>
+
+              <!-- CONTACT LINKS -->
               <tr>
                 <td style="font-size: 12px; line-height: 20px;">
 
                   ${
                     data.phone
-                      ? `<a href="tel:${data.phone}" style="color: #ffffff; text-decoration: none;">
-                        <img
-                          src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/phone-call.fb194a64.png"
-                          alt="Phone"
-                          width="14"
-                          draggable="false"
-                          style="
-                            vertical-align: middle;
-                            display: inline-block;
-                            pointer-events: none;
-                          "
-                        />
-                        &nbsp;${data.phone}
-                      </a><br />`
+                      ? `
+                        <a href="tel:${data.phone}" style="color: #ffffff; text-decoration: none;">
+                          <img
+                            src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/phone-call.fb194a64.png"
+                            alt="Phone"
+                            width="14"
+                            draggable="false"
+                            style="vertical-align: middle; display: inline-block; pointer-events: none;"
+                          />
+                          &nbsp;${data.phone}
+                        </a><br />
+                      `
                       : ""
                   }
 
                   ${
                     data.website1
-                      ? `<a href="${
+                      ? `
+                        <a href="${
                           data.website1
                         }" style="color: #ffffff; text-decoration: none;">
-                        <img
-                          src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/globe.005b6416.png"
-                          alt="Website"
-                          width="14"
-                          draggable="false"
-                          style="
-                            vertical-align: middle;
-                            display: inline-block;
-                            pointer-events: none;
-                          "
-                        />
-                        &nbsp;${data.website1
-                          .replace("https://", "")
-                          .replace("www.", "")}
-                      </a><br />`
+                          <img
+                            src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/globe.005b6416.png"
+                            alt="Website"
+                            width="14"
+                            draggable="false"
+                            style="vertical-align: middle; display: inline-block; pointer-events: none;"
+                          />
+                          &nbsp;${data.website1
+                            .replace("https://", "")
+                            .replace("www.", "")}
+                        </a><br />
+                      `
                       : ""
                   }
 
                   ${
                     data.website2
-                      ? `<a href="${
+                      ? `
+                        <a href="${
                           data.website2
                         }" style="color: #ffffff; text-decoration: none;">
-                        <img
-                          src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/globe.005b6416.png"
-                          alt="Website"
-                          width="14"
-                          draggable="false"
-                          style="
-                            vertical-align: middle;
-                            display: inline-block;
-                            pointer-events: none;
-                          "
-                        />
-                        &nbsp;${data.website2
-                          .replace("https://", "")
-                          .replace("www.", "")}
-                      </a>`
+                          <img
+                            src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/globe.005b6416.png"
+                            alt="Website"
+                            width="14"
+                            draggable="false"
+                            style="vertical-align: middle; display: inline-block; pointer-events: none;"
+                          />
+                          &nbsp;${data.website2
+                            .replace("https://", "")
+                            .replace("www.", "")}
+                        </a>
+                      `
                       : ""
                   }
 
                 </td>
               </tr>
+
             </table>
           </td>
         </tr>
 
+        <!-- FULL-WIDTH LOGO SECTION -->
         <tr>
-          <td colspan="2" style="padding-top: 10px; font-size: 9px; color: #ffffff; text-align: justify;">
+          <td colspan="2" style="padding-top: 20px;">
+
+            <table cellpadding="0" cellspacing="0" width="100%">
+              <tr>
+
+                <td style="text-align: center;">
+                  <img
+                    src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/AOW-logo.ee764c1e.png"
+                    alt="AOW logo"
+                    width="170"
+                    draggable="false"
+                    style="display: block; margin: 0 auto; pointer-events: none;"
+                  />
+                </td>
+
+                <td style="text-align: center;">
+                  <img
+                    src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/AOH-logo-1+(1)+1.png"
+                    alt="AOH logo"
+                    width="170"
+                    draggable="false"
+                    style="display: block; margin: 0 auto; pointer-events: none;"
+                  />
+                </td>
+
+                <td style="text-align: center;">
+                  <img
+                    src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/AOD-logo+(1)+1.png"
+                    alt="AOD logo"
+                    width="170"
+                    draggable="false"
+                    style="display: block; margin: 0 auto; pointer-events: none;"
+                  />
+                </td>
+
+              </tr>
+            </table>
+
+          </td>
+        </tr>
+
+        <!-- DISCLAIMER -->
+        <tr>
+          <td colspan="2" style="
+            padding-top: 10px;
+            font-size: 9px;
+            color: #ffffff;
+            text-align: justify;
+          ">
             This email, its contents and any attachments are strictly confidential.
             They must not be used, distributed, copied or read by any person other
             than the addressee. Unauthorised use, disclosure, copying or reliance on
@@ -242,10 +283,12 @@ background-position: right bottom; background-size: 200px auto;"
             return.
           </td>
         </tr>
+
       </table>
     </td>
   </tr>
-</table>`,
+</table>
+`,
     adonworkforce: `
     <table
   cellpadding="0"

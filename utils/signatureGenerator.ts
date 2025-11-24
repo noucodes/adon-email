@@ -127,7 +127,7 @@ background-position: right bottom; background-size: 200px auto;"
           <!-- LEFT LOGO -->
           <td style="vertical-align: top; width: 40%; text-align: center;">
             <img
-              src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/adonsa-logo+(1).png"
+              src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/ADONSA-logo+(2).png"
               alt="AOW SA logo"
               width="200"
               draggable="false"
@@ -223,48 +223,6 @@ background-position: right bottom; background-size: 200px auto;"
           </td>
         </tr>
 
-        <!-- FULL-WIDTH LOGO SECTION -->
-        <tr>
-          <td colspan="2" style="padding-top: 20px;">
-
-            <table cellpadding="0" cellspacing="0" width="100%">
-              <tr>
-
-                <td style="text-align: center;">
-                  <img
-                    src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/AOW-logo.ee764c1e.png"
-                    alt="AOW logo"
-                    width="170"
-                    draggable="false"
-                    style="display: block; margin: 0 auto; pointer-events: none;"
-                  />
-                </td>
-
-                <td style="text-align: center;">
-                  <img
-                    src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/AOH-logo-1+(1)+1.png"
-                    alt="AOH logo"
-                    width="170"
-                    draggable="false"
-                    style="display: block; margin: 0 auto; pointer-events: none;"
-                  />
-                </td>
-
-                <td style="text-align: center;">
-                  <img
-                    src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/AOD-logo+(1)+1.png"
-                    alt="AOD logo"
-                    width="170"
-                    draggable="false"
-                    style="display: block; margin: 0 auto; pointer-events: none;"
-                  />
-                </td>
-
-              </tr>
-            </table>
-
-          </td>
-        </tr>
 
         <!-- DISCLAIMER -->
         <tr>

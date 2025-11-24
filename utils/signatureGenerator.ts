@@ -127,7 +127,7 @@ background-position: right bottom; background-size: 200px auto;"
           <!-- LEFT LOGO -->
           <td style="vertical-align: top; width: 40%; text-align: center;">
             <img
-              src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/ADONSA-logo+(2).png"
+              src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/ADONSA-logo-1.png"
               alt="AOW SA logo"
               width="200"
               draggable="false"

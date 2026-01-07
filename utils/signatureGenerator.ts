@@ -202,7 +202,7 @@ background-position: right bottom; background-size: 200px auto;"
                           data.website2
                         }" style="color: #ffffff; text-decoration: none;">
                           <img
-                            src="https://raw.githubusercontent.com/noucodes/adon-email/refs/heads/main/public/globe.pngf"
+                            src="https://raw.githubusercontent.com/noucodes/adon-email/refs/heads/main/public/globe.png"
                             alt="Website"
                             width="14"
                             draggable="false"

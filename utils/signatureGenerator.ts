@@ -127,7 +127,7 @@ background-position: right bottom; background-size: 200px auto;"
           <!-- LEFT LOGO -->
           <td style="vertical-align: top; width: 40%; text-align: center;">
             <img
-              src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/ADONSA-logo-1.png"
+              src="https://raw.githubusercontent.com/noucodes/adon-email/refs/heads/main/public/adon-sa.png"
               alt="AOW SA logo"
               width="200"
               draggable="false"
@@ -162,7 +162,7 @@ background-position: right bottom; background-size: 200px auto;"
                       ? `
                         <a href="tel:${data.phone}" style="color: #ffffff; text-decoration: none;">
                           <img
-                            src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/phone-call.fb194a64.png"
+                            src="https://raw.githubusercontent.com/noucodes/adon-email/refs/heads/main/public/phone-call.png"
                             alt="Phone"
                             width="14"
                             draggable="false"
@@ -181,7 +181,7 @@ background-position: right bottom; background-size: 200px auto;"
                           data.website1
                         }" style="color: #ffffff; text-decoration: none;">
                           <img
-                            src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/globe.005b6416.png"
+                            src="https://raw.githubusercontent.com/noucodes/adon-email/refs/heads/main/public/globe.png"
                             alt="Website"
                             width="14"
                             draggable="false"
@@ -202,7 +202,7 @@ background-position: right bottom; background-size: 200px auto;"
                           data.website2
                         }" style="color: #ffffff; text-decoration: none;">
                           <img
-                            src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/globe.005b6416.png"
+                            src="https://raw.githubusercontent.com/noucodes/adon-email/refs/heads/main/public/globe.pngf"
                             alt="Website"
                             width="14"
                             draggable="false"
@@ -307,7 +307,7 @@ background-position: right bottom; background-size: 200px auto;"
                     data.phone
                       ? `<a href="tel:${data.phone}" style="color: #ffffff; text-decoration: none;">
                         <img
-                          src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/phone-call.fb194a64.png"
+                          src="https://raw.githubusercontent.com/noucodes/adon-email/refs/heads/main/public/phone-call.png"
                           alt="Phone"
                           width="14"
                           draggable="false"
@@ -328,7 +328,7 @@ background-position: right bottom; background-size: 200px auto;"
                           data.website1
                         }" style="color: #ffffff; text-decoration: none;">
                         <img
-                          src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/globe.005b6416.png"
+                          src="https://raw.githubusercontent.com/noucodes/adon-email/refs/heads/main/public/globe.png"
                           alt="Website"
                           width="14"
                           draggable="false"
@@ -351,7 +351,7 @@ background-position: right bottom; background-size: 200px auto;"
                           data.website2
                         }" style="color: #ffffff; text-decoration: none;">
                         <img
-                          src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/globe.005b6416.png"
+                          src="https://raw.githubusercontent.com/noucodes/adon-email/refs/heads/main/public/globe.png"
                           alt="Website"
                           width="14"
                           draggable="false"
@@ -663,17 +663,17 @@ export const generateMondaySignature = (
         <tr>
           <td style="font-size: 12px; line-height: 20px;">
             <a href="tel:07 5586 1400" style="color: #ffffff; text-decoration: none;">
-              <img src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/phone-call.fb194a64.png" alt="Phone" width="14" style="vertical-align: middle;display: inline-block;"> 
+              <img src="https://raw.githubusercontent.com/noucodes/adon-email/refs/heads/main/public/phone-call.png" alt="Phone" width="14" style="vertical-align: middle;display: inline-block;"> 
               &nbsp;07 5586 1400
             </a>
             <br>
             <a href="https://www.adongroup.com.au" style="color: #ffffff; text-decoration: none;">
-              <img src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/globe.005b6416.png" alt="Website" width="14" style="vertical-align: middle;display: inline-block; "> 
+                  <img src="https://raw.githubusercontent.com/noucodes/adon-email/refs/heads/main/public/globe.png" alt="Website" width="14" style="vertical-align: middle;display: inline-block; "> 
               &nbsp;www.adongroup.com.au
             </a>
             <br>
             <a href="https://www.adonworkforce.com.au" style="color: #ffffff; text-decoration: none;">
-              <img src="https://amzn-hris-bucket.s3.ap-southeast-2.amazonaws.com/email-signature-assets/globe.005b6416.png" alt="Website" width="14" style="vertical-align: middle;display: inline-block; "> 
+              <img src="https://raw.githubusercontent.com/noucodes/adon-email/refs/heads/main/public/globe.png" alt="Website" width="14" style="vertical-align: middle;display: inline-block; "> 
               &nbsp;www.adonworkforce.com.au
             </a>
           </td>
